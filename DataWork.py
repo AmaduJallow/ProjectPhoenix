@@ -31,11 +31,13 @@ def train(X, Y, interations, lr):
     raise Exception("Could not converge with in %d interations" % interations)
 
 
+
 print(plt.style.available)
 path = "C:/Users/amadu/PycharmProjects/ProjectPhoenix\Data/reser.txt"
 X, Y = np.loadtxt(path, skiprows=1, unpack=True)
 w = train(X, Y, interations=10000, lr=0.01)
 print("\nw=%.3f" % w)
 print("Prediction: x=%d => y=%.2f" % (20, predict(20, w)))
+sn.set()
+plt.style.use('dark_background')
 plt.plot(X, Y)
-plt.show()
