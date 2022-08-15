@@ -21,12 +21,15 @@ def train(X, Y, interations, lr):
     w = 0
     for i in range(interations):
         current_loss = loss(X, Y, w)
-        print("Iterations %4d => Loss: %.6f" % (i, current_loss))
+        print("Iterations %4d => Loss: %.13f" % (i, current_loss))
         if loss(X, Y, w + lr) < current_loss:
             w += lr
+            print("width from actual value %.25f" % w)
         elif loss(X, Y, w - lr) < current_loss:
             w -= lr
+            print("width from actual value %.25f" % w)
         else:
+            print("width from actual value %.25f" % w)
             return w
     raise Exception("Could not converge with in %d interations" % interations)
 
@@ -35,7 +38,7 @@ def train(X, Y, interations, lr):
 print(plt.style.available)
 path = "C:/Users/amadu/PycharmProjects/ProjectPhoenix\Data/reser.txt"
 X, Y = np.loadtxt(path, skiprows=1, unpack=True)
-w = train(X, Y, interations=10000, lr=0.01)
+w = train(X, Y, interations=1_000_000, lr=0.01)
 print("\nw=%.3f" % w)
 print("Prediction: x=%d => y=%.2f" % (20, predict(20, w)))
 sn.set()
