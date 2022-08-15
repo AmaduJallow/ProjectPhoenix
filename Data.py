@@ -15,4 +15,6 @@ import math
 x_values = np.linspace(0, 40, 20)
 y_values = list(math.pow(i, 2) for i in range(1, 21))
 plt.plot(x_values, y_values)
+value = np.average([5,5,5,5,5,5])
+print(value)
 plt.show()
