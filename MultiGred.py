@@ -29,6 +29,6 @@ X = np.column_stack([X1, X2, X3])
 Y = Y.reshape(-1, 1)
 w = np.zeros([X.shape[1], 1])
 print(w)
-w = train(X, Y, interation=1_000, lr=0.001)
+w = train(X, Y, interation=10_000, lr=0.0001)
 
 
