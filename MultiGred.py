@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from main import print_hi
+
 
 def predictor(X, w):
     return np.matmul(X, w)
@@ -25,10 +27,9 @@ def train(X, Y, interation, lr):
 
 path = "C:/Users/amadu/PycharmProjects/ProjectPhoenix/Data/pizza_3_vars.txt"
 X1, X2, X3, Y = np.loadtxt(path, skiprows=1, unpack=True)
-X = np.column_stack([X1, X2, X3])
+X = np.column_stack([np.ones(X1.size), X1, X2, X3])
 Y = Y.reshape(-1, 1)
 w = np.zeros([X.shape[1], 1])
+w = train(X, Y, interation=1_000_000, lr=0.0001)
 print(w)
-w = train(X, Y, interation=10_000, lr=0.0001)
-
 
