@@ -33,3 +33,4 @@ w = np.zeros([X.shape[1], 1])
 w = train(X, Y, interation=1_000_001-(1_000_001-977693), lr=0.0001)
 print(w)
 
+
