@@ -30,7 +30,8 @@ X1, X2, X3, Y = np.loadtxt(path, skiprows=1, unpack=True)
 X = np.column_stack([np.ones(X1.size), X1, X2, X3])
 Y = Y.reshape(-1, 1)
 w = np.zeros([X.shape[1], 1])
-w = train(X, Y, interation=1_000_001-(1_000_001-977693), lr=0.0001)
+w = train(X, Y, interation=1_000_001 - (1_000_001 - 977693), lr=0.0001)
 print(w)
-
-
+value = np.array([[[1, 3, 2, 3], [1, 2, 3], [1, 2, 3]]], dtype=object)
+value = value.transpose()
+print(value)
