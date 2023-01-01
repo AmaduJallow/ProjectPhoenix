@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.spatial import Voronoi, voronoi_plot_2d
+from scipy.spatial import Voronoi, voronoi_plot_2d, Delaunay
 
 # Define the points.
 points = np.array(
@@ -11,6 +11,10 @@ points = np.array(
 
 # Compute the Voronoi diagram.
 voronoi_diagram = Voronoi(points)
+
+# Plot Delaunay Triangulation
+triangulation = Delaunay(points)
+
 
 # Plot the diagram.
 fig, axis = plt.subplots()
@@ -24,5 +28,6 @@ axis.set_xlabel('X Values')
 axis.set_ylabel('Y Values')
 
 # Add the point coordinates to the plot.
-plt.plot(points[:, 0], points[:, 1], 'o', color='blue', markersize=2)
+# plt.plot(points[:, 0], points[:, 1],'o', color='blue', markersize=2)
+plt.triplot(points[:, 0], points[:, 1])
 plt.show()
