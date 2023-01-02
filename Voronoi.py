@@ -3,12 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define a set of points
-points = np.array([[1, 2], [2, 1], [1, 1], [2, 3]])
+points = np.array([[1, 2], [2, 1], [1, 1], [2, 3], [3, 4], [2, 2]])
 
 # Compute the Voronoi diagram
 vor = Voronoi(points)
 # Plot Delaunay Triangulation over the Voronoi diagram
-triangulation = Delaunay(points)
+# triangulation = Delaunay(points)
 
 # Plot the diagram
 fig, axis = plt.subplots()
@@ -22,5 +22,5 @@ axis.set_xlim(-1, 6)
 axis.set_ylim(-1, 6)
 
 plt.plot(points[:, 0], points[:, 1], 'o', color='blue', markersize=4)
-plt.triplot(points[:, 0], points[:, 1])
+# plt.triplot(points[:, 0], points[:, 1])
 plt.show()
