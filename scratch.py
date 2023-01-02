@@ -39,8 +39,8 @@ p_0 = Point(1, 2)
 p_1 = Point(2, 1)
 p_2 = Point(1, 1)
 p_3 = Point(2, 3)
-
-points = [p_0, p_1, p_2, p_3]
-
+p_4 = Point(3, 4)
+p_5 = Point(2, 2)
+points = [p_0, p_1, p_2, p_3, p_4, p_5]
 result = voronoi(points)
 print(result)
