@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define a set of points
-points = np.array([[1, 2], [2, 1], [1, 1], [2, 3], [3, 4], [2, 2]])
+points = np.array([[1,1], [1, 2], [2, 2]])
 
 # Compute the Voronoi diagram
 vor = Voronoi(points)
