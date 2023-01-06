@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 # Define a set of points
 points = np.array([[1,1], [1, 2], [2, 2]])
 
+
 # Compute the Voronoi diagram
 vor = Voronoi(points)
 # Plot Delaunay Triangulation over the Voronoi diagram

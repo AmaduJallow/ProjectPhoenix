@@ -4,17 +4,17 @@ import matplotlib.pyplot as plt
 v_points = namedtuple('Point', ['x', 'y'])
 
 
-def voronoi(input_values):
+def voronoi(point):
     edges_for_voronoi = []
-    for k, point_1 in enumerate(input_values):
-        for j, point_2 in enumerate(input_values):
+    for k, point_1 in enumerate(point):
+        for j, point_2 in enumerate(point):
             if k == j or k < 0 or j < 0 or point_1.x == point_2.x or point_1.y == point_2.y:
                 continue
             bisector_x_value = (point_1.x + point_2.x) / 2
             bisector_y_value = (point_1.y + point_2.y) / 2
             edges_for_voronoi.append((bisector_x_value, bisector_y_value))
 
-    return edges_for_voronoi, input_values
+    return edges_for_voronoi, point
 
 
 def drawer(inputs):
