@@ -1,6 +1,6 @@
-import math
 import random
 from collections import namedtuple
+
 import matplotlib.pyplot as plotter
 
 v_points = namedtuple('Point', ['x', 'y'])
@@ -23,7 +23,6 @@ def pointGenerator(number_of_points):
     point_holder = []
     x = 0
     y = 0
-
     for i in range(number_of_points + 1):
         x = random.randint(1, number_of_points)
         y = random.randint(x, number_of_points)
@@ -59,7 +58,7 @@ def drawer(inputs):
 # You can use the function to generate n numbers of points
 points = pointGenerator(3)
 
-# You can this part here to put points manually
+# You can use this part here to pass points manually
 points = [v_points(3, 4), v_points(4, 3), v_points(2, 3), v_points(2, 1)]
 outputValues = voronoi(points)
 drawer(outputValues)
